@@ -1,8 +1,12 @@
 .footer {
   @apply p-6;
-  @apply text-right;
+  @apply flex justify-between;
+
+  & nav:last-child {
+    @apply text-right;
+  }
 
   & a + a {
-    @apply ml-2;
+    @apply ml-4;
   }
 }
