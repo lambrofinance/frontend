@@ -1,0 +1,4 @@
+.content {
+  @apply flex-1 w-full;
+  @apply my-8;
+}

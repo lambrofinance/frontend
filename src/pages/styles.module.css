@@ -1,0 +1,29 @@
+.landing {
+  @apply text-center;
+
+  & img {
+    @apply inline-block;
+    @apply mb-12;
+    @apply w-full;
+    max-width: 300px;
+  }
+
+  & h1 {
+    @apply font-extrabold;
+    @apply font-sans;
+    @apply text-6xl;
+    @apply mb-20;
+
+    @media (max-width: 520px) {
+      @apply text-5xl;
+    }
+
+    @media (max-width: 420px) {
+      @apply text-4xl;
+    }
+
+    @media (max-width: 320px) {
+      @apply text-3xl;
+    }
+  }
+}

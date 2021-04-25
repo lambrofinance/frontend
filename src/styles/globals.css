@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply antialiased;
+  @apply bg-white;
+  @apply text-tint;
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#__next {
+  @apply min-h-full h-full;
+}
+
+#__next {
+  @apply h-auto;
+  @apply flex flex-col;
+  @apply text-xs font-mono;
+}

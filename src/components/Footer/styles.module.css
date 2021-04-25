@@ -1,0 +1,8 @@
+.footer {
+  @apply p-6;
+  @apply text-right;
+
+  & a + a {
+    @apply ml-2;
+  }
+}
