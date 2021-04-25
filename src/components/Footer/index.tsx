@@ -8,7 +8,7 @@ const Footer = () => (
         target="_blank"
         rel="noreferrer"
       >
-        github
+        GitHub
       </a>
     </nav>
   </footer>
