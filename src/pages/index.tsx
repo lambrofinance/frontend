@@ -38,6 +38,15 @@ const LandingPage = () => {
             <br />
             Are you one of them?
           </p>
+          <p>
+            <a
+              href="https://bscscan.com/token/0x9685208eb8Daf44578c0da4257A5f0E5a6ef97e6"
+              target="_blank"
+              rel="noreferrer"
+            >
+              0x9685208eb8Daf44578c0da4257A5f0E5a6ef97e6
+            </a>
+          </p>
         </Content>
       </Layout.Content>
       <Footer />

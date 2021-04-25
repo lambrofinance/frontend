@@ -26,4 +26,8 @@
       @apply text-3xl;
     }
   }
+
+  & p + p {
+    @apply mt-10;
+  }
 }
