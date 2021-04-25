@@ -46,6 +46,14 @@ const LandingPage = () => {
             >
               0x9685208eb8Daf44578c0da4257A5f0E5a6ef97e6
             </a>
+            <br />
+            <a
+              href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x9685208eb8Daf44578c0da4257A5f0E5a6ef97e6"
+              target="_blank"
+              rel="noreferrer"
+            >
+              buy on pancakeswap
+            </a>
           </p>
         </Content>
       </Layout.Content>
