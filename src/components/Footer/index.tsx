@@ -24,6 +24,13 @@ const Footer = () => (
       >
         LP-token Burn TX
       </a>
+      <a
+        href="https://bscscan.com/tx/0xc3771bca578cd9f91dfb312a1484dca452c5e30915eb26277aaf058ee6774a8f"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Admin Burn TX
+      </a>
     </nav>
     <nav>
       <a
