@@ -5,17 +5,17 @@
   & nav:last-child {
     @apply text-right;
 
-    @media (max-width: 360px) {
+    @media (max-width: 470px) {
       @apply text-left;
       @apply mt-3;
     }
   }
 
-  & a + a {
-    @apply ml-4;
+  & a {
+    @apply mr-4;
   }
 
-  @media (max-width: 360px) {
+  @media (max-width: 470px) {
     @apply block;
 
     & a {
