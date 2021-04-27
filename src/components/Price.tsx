@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Web3 from 'web3';
 
 import TextSpinner from './TextSpinner';
@@ -54,7 +54,31 @@ const Price = () => {
     }
   }, [state]);
 
-  return <span>{state === State.Loading && <TextSpinner />}</span>;
+  const onMetaMaskMissingClick = useCallback(
+    () =>
+      alert('To view the price, the MetaMask plugin needs to be installed.'),
+    [],
+  );
+
+  const onNotBinanceSmartChainClick = useCallback(
+    () =>
+      alert(
+        'To view the price, please connect to Binance Smart Chain mainnet.',
+      ),
+    [],
+  );
+
+  return (
+    <span>
+      {state === State.Loading && <TextSpinner />}
+      {state === State.MetaMaskMissing && (
+        <a onClick={onMetaMaskMissingClick}>Price</a>
+      )}
+      {state === State.NotBinanceSmartChain && (
+        <a onClick={onNotBinanceSmartChainClick}>Price</a>
+      )}
+    </span>
+  );
 };
 
 export default Price;
