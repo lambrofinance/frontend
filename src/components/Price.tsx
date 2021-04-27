@@ -1,7 +1,9 @@
+import TextSpinner from 'components/TextSpinner';
+import LAMBROBNB_CONTRACT_ABI from 'contracts/0x2ce39156176188f19cc8c78136df3e703c51b506.json';
 import { useCallback, useEffect, useState } from 'react';
 import Web3 from 'web3';
 
-import TextSpinner from './TextSpinner';
+const LAMBROBNB_CONTRACT_ADDRESS = '0x2ce39156176188f19cc8c78136df3e703c51b506';
 
 declare global {
   interface Window {
@@ -14,9 +16,11 @@ enum State {
   Connected = 'price.state.connected',
   MetaMaskMissing = 'price.state.metamask-missing',
   NotBinanceSmartChain = 'price.state.not-binance-smart-chain',
+  Error = 'price.state.error',
 }
 
 const Price = () => {
+  const [price, setPrice] = useState(null);
   const [state, setState] = useState(State.Loading);
   const [web3, setWeb3] = useState<Web3>(null);
 
@@ -50,9 +54,46 @@ const Price = () => {
     console.log(state);
 
     if (state === State.Connected) {
-      console.log('todo: read smart contract');
+      const contract = new web3.eth.Contract(
+        LAMBROBNB_CONTRACT_ABI as any,
+        LAMBROBNB_CONTRACT_ADDRESS,
+      );
+
+      (async () => {
+        try {
+          const reserves = await contract.methods.getReserves().call();
+          const LAMBRO = reserves[0] / 10 ** 18;
+          const BNB = reserves[1] / 10 ** 18;
+
+          if (!LAMBRO || !BNB) {
+            setState(State.Error);
+            return;
+          }
+
+          const response = await fetch(
+            'https://api.coinpaprika.com/v1/tickers/bnb-binance-coin',
+          );
+          const data = await response.json();
+          const BNBUSD = data?.quotes?.USD?.price;
+
+          if (!BNBUSD) {
+            setState(State.Error);
+            return;
+          }
+
+          const LAMBROUSD = BNBUSD * (BNB / LAMBRO);
+          if (typeof LAMBROUSD !== 'number') {
+            setState(State.Error);
+            return;
+          }
+
+          setPrice(LAMBROUSD);
+        } catch {
+          setState(State.Error);
+        }
+      })();
     }
-  }, [state]);
+  }, [state, web3]);
 
   const onMetaMaskMissingClick = useCallback(
     () =>
@@ -71,12 +112,15 @@ const Price = () => {
   return (
     <span>
       {state === State.Loading && <TextSpinner />}
+      {state === State.Connected && !price && <TextSpinner />}
+      {state === State.Error && <TextSpinner />}
       {state === State.MetaMaskMissing && (
         <a onClick={onMetaMaskMissingClick}>Price</a>
       )}
       {state === State.NotBinanceSmartChain && (
         <a onClick={onNotBinanceSmartChainClick}>Price</a>
       )}
+      {price && `1 LAMBRO = $${price.toFixed(5)}`}
     </span>
   );
 };
