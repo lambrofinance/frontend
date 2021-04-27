@@ -1,5 +1,6 @@
 import TextSpinner from 'components/TextSpinner';
 import LAMBROBNB_CONTRACT_ABI from 'contracts/0x2ce39156176188f19cc8c78136df3e703c51b506.json';
+import Head from 'next/head';
 import { useCallback, useEffect, useState } from 'react';
 import Web3 from 'web3';
 
@@ -61,7 +62,7 @@ const Price = () => {
         LAMBROBNB_CONTRACT_ADDRESS,
       );
 
-      (async () => {
+      const calculatePrice = async () => {
         try {
           const reserves = await contract.methods.getReserves().call();
           const LAMBRO = reserves[0] / 10 ** 18;
@@ -93,7 +94,13 @@ const Price = () => {
         } catch {
           setState(State.Error);
         }
-      })();
+      };
+
+      calculatePrice();
+
+      const interval = setInterval(calculatePrice, 5000);
+
+      return () => clearInterval(interval);
     }
   }, [state, web3]);
 
@@ -140,6 +147,9 @@ const Price = () => {
       )}
       {price && (
         <>
+          <Head>
+            <title>1 LAMBRO = ${price.toFixed(6)}</title>
+          </Head>
           <span>1 LAMBRO = ${price.toFixed(6)}</span>
         </>
       )}
