@@ -1,0 +1,9 @@
+.header {
+  @apply p-6;
+  @apply flex justify-between;
+
+  & a {
+    @apply mr-4;
+    @apply cursor-pointer;
+  }
+}

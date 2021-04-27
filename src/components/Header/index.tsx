@@ -3,6 +3,8 @@ import LAMBROBNB_CONTRACT_ABI from 'contracts/0x2ce39156176188f19cc8c78136df3e70
 import { useCallback, useEffect, useState } from 'react';
 import Web3 from 'web3';
 
+import styles from './styles.module.css';
+
 const LAMBROBNB_CONTRACT_ADDRESS = '0x2ce39156176188f19cc8c78136df3e703c51b506';
 
 declare global {
@@ -110,18 +112,22 @@ const Price = () => {
   );
 
   return (
-    <span>
+    <header className={styles.header}>
       {state === State.Loading && <TextSpinner />}
       {state === State.Connected && !price && <TextSpinner />}
       {state === State.Error && <TextSpinner />}
       {state === State.MetaMaskMissing && (
-        <a onClick={onMetaMaskMissingClick}>Price</a>
+        <a onClick={onMetaMaskMissingClick}>Fetch Price</a>
       )}
       {state === State.NotBinanceSmartChain && (
-        <a onClick={onNotBinanceSmartChainClick}>Price</a>
+        <a onClick={onNotBinanceSmartChainClick}>Fetch Price</a>
       )}
-      {price && `1 LAMBRO = $${price.toFixed(5)}`}
-    </span>
+      {price && (
+        <>
+          <span>1 LAMBRO = ${price.toFixed(6)}</span>
+        </>
+      )}
+    </header>
   );
 };
 

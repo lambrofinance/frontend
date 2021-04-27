@@ -1,7 +1,7 @@
 import Content from 'components/Content';
 import Footer from 'components/Footer';
+import Header from 'components/Header';
 import Layout from 'components/Layout';
-import Price from 'components/Price';
 import Head from 'next/head';
 
 import styles from './styles.module.css';
@@ -30,6 +30,7 @@ const LandingPage = () => {
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
       </Head>
+      <Header />
       <Layout.Content>
         <Content styles={[styles.landing]}>
           <img src="/images/lambrofinance.svg" />
@@ -55,9 +56,6 @@ const LandingPage = () => {
             >
               Get it on PancakeSwap!
             </a>
-          </p>
-          <p>
-            <Price />
           </p>
         </Content>
       </Layout.Content>
