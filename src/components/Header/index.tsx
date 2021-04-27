@@ -113,14 +113,30 @@ const Price = () => {
 
   return (
     <header className={styles.header}>
-      {state === State.Loading && <TextSpinner />}
-      {state === State.Connected && !price && <TextSpinner />}
-      {state === State.Error && <TextSpinner />}
+      {state === State.Loading && (
+        <>
+          1 LAMBRO = <TextSpinner />
+        </>
+      )}
+      {state === State.Connected && !price && (
+        <>
+          1 LAMBRO = <TextSpinner />
+        </>
+      )}
+      {state === State.Error && (
+        <>
+          1 LAMBRO = <TextSpinner />
+        </>
+      )}
       {state === State.MetaMaskMissing && (
-        <a onClick={onMetaMaskMissingClick}>Fetch Price</a>
+        <a onClick={onMetaMaskMissingClick}>
+          1 LAMBRO = <TextSpinner />
+        </a>
       )}
       {state === State.NotBinanceSmartChain && (
-        <a onClick={onNotBinanceSmartChainClick}>Fetch Price</a>
+        <a onClick={onNotBinanceSmartChainClick}>
+          1 LAMBRO = <TextSpinner />
+        </a>
       )}
       {price && (
         <>
