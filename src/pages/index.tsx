@@ -1,6 +1,7 @@
 import Content from 'components/Content';
 import Footer from 'components/Footer';
 import Layout from 'components/Layout';
+import Price from 'components/Price';
 import Head from 'next/head';
 
 import styles from './styles.module.css';
@@ -54,6 +55,9 @@ const LandingPage = () => {
             >
               Get it on PancakeSwap!
             </a>
+          </p>
+          <p>
+            <Price />
           </p>
         </Content>
       </Layout.Content>
