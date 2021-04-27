@@ -3,5 +3,6 @@
 
   & a {
     @apply -mx-0.5;
+    @apply cursor-pointer;
   }
 }
