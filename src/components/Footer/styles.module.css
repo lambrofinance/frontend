@@ -1,6 +1,7 @@
 .footer {
   @apply p-6;
   @apply flex justify-between;
+  @apply flex-shrink-0;
 
   & nav:last-child {
     @apply text-right;

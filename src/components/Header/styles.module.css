@@ -1,6 +1,7 @@
 .header {
   @apply p-6;
   @apply flex justify-between;
+  @apply flex-shrink-0;
 
   & a {
     @apply mr-4;
