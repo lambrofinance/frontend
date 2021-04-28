@@ -13,6 +13,7 @@
 
   & a {
     @apply mr-4;
+    @apply cursor-pointer;
   }
 
   @media (max-width: 470px) {

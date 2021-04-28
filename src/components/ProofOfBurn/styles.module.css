@@ -1,0 +1,23 @@
+.proofOfBurn {
+  @apply fixed inset-0;
+  @apply flex items-center justify-center;
+  @apply backdrop-opacity-50;
+  @apply backdrop-filter backdrop-contrast-75 backdrop-blur-sm;
+
+  & div {
+    @apply bg-white;
+    @apply rounded-lg;
+    @apply shadow-lg;
+    @apply p-12;
+
+    & h2 {
+      @apply font-sans font-bold text-xl;
+      @apply mb-8;
+    }
+
+    & h3 {
+      @apply font-bold;
+      @apply mt-4;
+    }
+  }
+}
