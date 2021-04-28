@@ -9,6 +9,20 @@
     @apply rounded-lg;
     @apply shadow-lg;
     @apply p-12;
+    @apply relative;
+
+    & button {
+      @apply absolute;
+      @apply top-4 right-4;
+      @apply text-2xl;
+      @apply text-gray-400;
+      @apply leading-none;
+      @apply p-2;
+
+      &:hover {
+        @apply text-gray-500;
+      }
+    }
 
     & h2 {
       @apply font-sans font-bold text-xl;

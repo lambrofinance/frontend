@@ -1,4 +1,5 @@
 import { MouseEvent, useCallback, useRef } from 'react';
+import { IoClose } from 'react-icons/io5';
 
 import styles from './styles.module.css';
 
@@ -26,6 +27,9 @@ const ProofOfBurn = (props: Props) => {
       ref={backdrop}
     >
       <div>
+        <button onClick={onHide}>
+          <IoClose />
+        </button>
         <h2>Contract creation &amp; proof of burn</h2>
 
         <h3>Token</h3>
