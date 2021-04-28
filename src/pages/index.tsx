@@ -60,7 +60,7 @@ const LandingPage = () => {
               target="_blank"
               rel="noreferrer"
             >
-              Get it on PancakeSwap!
+              Buy LAMBRO!
             </a>
           </p>
         </Content>
