@@ -7,7 +7,7 @@ import Head from 'next/head';
 import styles from './styles.module.css';
 
 const title = 'Lambro Finance';
-const description = 'There can only be 1,000,000 lambros. Are you one of them?';
+const description = 'There can only be 1 million Lambros. Are you one of them?';
 const image = 'https://lambro.finance/images/lambrofinance.jpg';
 
 const LandingPage = () => {
@@ -50,7 +50,7 @@ const LandingPage = () => {
           <img src="/images/lambrofinance.svg" />
           <h1>{title}</h1>
           <p>
-            There can only be 1,000,000 lambros.
+            There can only be 1 million Lambros.
             <br />
             Are you one of them?
           </p>
