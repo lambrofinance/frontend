@@ -6,6 +6,13 @@ const Footer = () => (
       <a href="whitepaper.pdf" target="_blank" rel="noreferrer">
         Whitepaper
       </a>
+      <a
+        href="https://bscscan.com/token/0x9685208eb8Daf44578c0da4257A5f0E5a6ef97e6"
+        target="_blank"
+        rel="noreferrer"
+      >
+        BscScan
+      </a>
     </nav>
     <nav>
       <a
