@@ -9,6 +9,16 @@ const Footer = () => (
     </nav>
     <nav>
       <a
+        href="https://twitter.com/lambrofinance"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Twitter
+      </a>
+      <a href="https://t.me/lambrofinance" target="_blank" rel="noreferrer">
+        Telegram
+      </a>
+      <a
         href="https://github.com/lambrofinance"
         target="_blank"
         rel="noreferrer"
