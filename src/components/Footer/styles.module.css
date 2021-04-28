@@ -7,7 +7,7 @@
 
     @media (max-width: 470px) {
       @apply text-left;
-      @apply mt-3;
+      @apply pr-3;
     }
   }
 
@@ -17,14 +17,14 @@
   }
 
   @media (max-width: 470px) {
-    @apply block;
+    @apply inline-block leading-loose;
 
     & a {
-      @apply block;
+      @apply inline-block;
     }
 
     & nav {
-      @apply block;
+      @apply inline;
     }
   }
 }
