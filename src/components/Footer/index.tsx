@@ -1,5 +1,5 @@
 import ProofOfBurn from 'components/ProofOfBurn';
-import { MouseEvent, useCallback, useState } from 'react';
+import { MouseEvent, useCallback, useEffect, useState } from 'react';
 
 import styles from './styles.module.css';
 
@@ -15,6 +15,14 @@ const Footer = () => {
   const onHide = useCallback(() => {
     setProofOfBurnVisible(false);
   }, []);
+
+  useEffect(() => {
+    if (proofOfBurnVisible) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [proofOfBurnVisible]);
 
   return (
     <>
