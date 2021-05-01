@@ -1,32 +1,32 @@
-import ProofOfBurn from 'components/ProofOfBurn';
+import SecurityModal from 'components/SecurityModal';
 import { MouseEvent, useCallback, useEffect, useState } from 'react';
 
 import styles from './styles.module.css';
 
 const Footer = () => {
-  const [proofOfBurnVisible, setProofOfBurnVisible] = useState(false);
+  const [securityModalVisible, setSecurityModalVisible] = useState(false);
 
-  const onBurnClick = useCallback((e: MouseEvent<unknown>) => {
+  const onSecurityClick = useCallback((e: MouseEvent<unknown>) => {
     e.preventDefault();
 
-    setProofOfBurnVisible(true);
+    setSecurityModalVisible(true);
   }, []);
 
   const onHide = useCallback(() => {
-    setProofOfBurnVisible(false);
+    setSecurityModalVisible(false);
   }, []);
 
   useEffect(() => {
-    if (proofOfBurnVisible) {
+    if (securityModalVisible) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
     }
-  }, [proofOfBurnVisible]);
+  }, [securityModalVisible]);
 
   return (
     <>
-      {proofOfBurnVisible && <ProofOfBurn onHide={onHide} />}
+      {securityModalVisible && <SecurityModal onHide={onHide} />}
       <footer className={styles.footer}>
         <nav>
           <a href="whitepaper.pdf" target="_blank" rel="noreferrer">
@@ -39,7 +39,7 @@ const Footer = () => {
           >
             Token
           </a>
-          <a onClick={onBurnClick}>Burn</a>
+          <a onClick={onSecurityClick}>Security</a>
         </nav>
         <nav>
           <a href="https://t.me/lambrofinance" target="_blank" rel="noreferrer">
