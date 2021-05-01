@@ -34,7 +34,7 @@ const SecurityModal = (props: Props) => {
 
         <h3>Token contract</h3>
         <a
-          href="https://bscscan.com/token/0x9685208eb8daf44578c0da4257a5f0e5a6ef97e6"
+          href="https://bscscan.com/address/0x9685208eb8daf44578c0da4257a5f0e5a6ef97e6"
           target="_blank"
           rel="noreferrer"
         >
