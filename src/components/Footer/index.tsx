@@ -43,14 +43,7 @@ const Footer = () => {
         </nav>
         <nav>
           <a href="https://t.me/lambrofinance" target="_blank" rel="noreferrer">
-            Telegram Channel
-          </a>
-          <a
-            href="https://t.me/lambrofinancechat"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Telegram Group Chat
+            Telegram
           </a>
           <a
             href="https://twitter.com/lambrofinance"
