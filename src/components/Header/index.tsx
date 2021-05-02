@@ -148,9 +148,9 @@ const Price = () => {
       {price && (
         <>
           <Head>
-            <title>1 LAMBRO = ${price.toFixed(6)}</title>
+            <title>1 LAMBRO = ${price.toFixed(4)}</title>
           </Head>
-          <span>1 LAMBRO = ${price.toFixed(6)}</span>
+          <span>1 LAMBRO = ${price.toFixed(4)}</span>
         </>
       )}
     </header>
